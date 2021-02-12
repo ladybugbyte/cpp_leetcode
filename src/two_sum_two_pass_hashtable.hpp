@@ -2,15 +2,20 @@
 // Time complexity is calculated so ...
 // Space complexitiy is calculated so ... 
 
-#include<map>
-#include<vector>
+#ifndef TWO_SUM_TWO_PASS_HASH_TABLE_H
+#define TWO_SUM_TWO_PASS_HASH_TABLE_H
 
-Class Solution {
- public:
-  vector<int> twoSum(vector<int>& nums, int target) {
+#include <vector>
+#include <map>
+using namespace std; 
+
+class SolutionTwoPass {
+
+  public: 
+  std::vector<int> twoSum(vector<int>& nums, int target) {
     
-      map<int,int> hashmap;
-      vector<int> result;
+      std::map<int,int> hashmap;
+      vector<int> result; 
       for (int i=0; i< nums.size(); i++) {
         int complement = target - nums[i];
         if(hashmap.find(complement) != hashmap.end()&&hashmap(complement)->second!=i) {
@@ -19,10 +24,8 @@ Class Solution {
         }
         hasmap.insert(pair<int,int>(nums[i],i));
       }
-      
-      return result;
-  
+     
+      return result;  
   }
-
-
 };
+#endif

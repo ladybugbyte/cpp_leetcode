@@ -6,14 +6,14 @@
 
 #include <vector>
 #include <unordered_map>
-using namespace std; 
+
 
 class SoulutionHash {
   public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    std::vector<int> twoSum(std::vector<int>& nums, int target) {
     std::unordered_map<int,int> hashmap{std::make_pair(nums[0],0)};
     
-    vector<int> result;
+    std::vector<int> result;
     for(int i=0; i<nums.size(); i++) {
       auto complement = hasmap.find(target-nums[i]);
       if(complement != hasmap.end() && complement->second != i){
