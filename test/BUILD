@@ -11,7 +11,6 @@ cc_test(
     features = [
         "extra_warnings",
         "test_warnings",
-        "treat_warnings_as_errors",
     ],
     deps = [
         "//src:cpp_leetcode",

@@ -7,22 +7,22 @@
 #include <vector>
 #include <unordered_map>
 
-
-class SoulutionHash {
+class SolutionHash {
   public:
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
-    std::unordered_map<int,int> hashmap{std::make_pair(nums[0],0)};
+    std::unordered_map<int, int> hashmap={std::make_pair(nums[0],0)};
     
     std::vector<int> result;
     for(int i=0; i<nums.size(); i++) {
-      auto complement = hasmap.find(target-nums[i]);
-      if(complement != hasmap.end() && complement->second != i){
+      auto complement = hashmap.find(target-nums[i]);
+      if(complement != hashmap.end() && complement->second != i){
         result = {complement->second,i};
       }
-      hashmap[nums[i]=i;
+      hashmap[nums[i]]=i;
     
     }
     return result; 
+    }
 };
 
 #endif
