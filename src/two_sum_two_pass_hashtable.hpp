@@ -12,21 +12,22 @@ class SolutionTwoPass {
 
   public:
   std::vector<int> twoSum(std::vector<int>& nums, int target) {
-    std::map<int,int> hashtable{std::make_pair(nums[0],0)};
+    std::map<int,int> hashtable;
 
     std::vector<int> result;
 
+   // this init is not necessary
     for(int i=0; i < nums.size(); i++) {
       hashtable[nums[i]] = i;
     }
 
     for(int i=0; i < nums.size(); i++) {
       int complement = target-nums[i];
-      if(hashtable.find(complement)!= hashtable.end() && hashtable[complement] != i){
-        result = {hashtable[complement],i};
- 
+      if((hashtable.find(complement) != hashtable.end()) && (hashtable[complement] != i)){
+        result.push_back(i);
+        result.push_back(hashtable[complement]);
+        break;
       }
-      hashtable[nums[i]]=i;
 
     }
     return result; 
